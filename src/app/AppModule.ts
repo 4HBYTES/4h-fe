@@ -14,6 +14,7 @@ import {UrlParse} from './imports/UrlParse';
 import {HomeModule} from './site/home/HomeModule';
 import {WindowWrapper} from './browser/WindowWrapper';
 import {UrlBuilder} from './location/UrlBuilder';
+import {HeaderModule} from './components/header/HeaderModule';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import {UrlBuilder} from './location/UrlBuilder';
     routing,
     TranslationModule,
     WindowWrapper,
-    HomeModule
+    HomeModule,
+    HeaderModule
   ],
   providers: [
     UrlParse,
