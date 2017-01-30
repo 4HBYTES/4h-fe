@@ -1,0 +1,36 @@
+# compiled output
+dist/
+tmp/
+coverage/
+
+# dependencies
+node_modules/
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.settings/
+
+# misc
+.sass-cache/
+npm-debug.log
+
+
+# system Files
+.DS_Store
+
+# netlify
+.netlify
+
+# src
+src/**/*.js
+src/**/*.js.map
+
+# test
+test/**/*.js
+test/**/*.js.map
+
+# process PID, for makefile
+backend-mock-service
+test-e2e
