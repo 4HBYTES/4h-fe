@@ -1,5 +1,5 @@
 import {Component, ChangeDetectorRef} from '@angular/core';
-import {Router} from '@angular/router';
+import {Router, NavigationStart} from '@angular/router';
 import {TokenStorage} from '../../auth/TokenStorage';
 
 @Component({
@@ -10,6 +10,7 @@ import {TokenStorage} from '../../auth/TokenStorage';
 export class HeaderComponent {
 
   private loggedIn:boolean = false;
+  private isHomePage:boolean = true;
 
   constructor(private router:Router,
               private tokenStorage:TokenStorage,
@@ -17,6 +18,12 @@ export class HeaderComponent {
     this.tokenStorage.hasToken.subscribe((token:boolean) => {
       this.loggedIn = token;
       this.cdRef.detectChanges();
+    });
+
+    router.events.subscribe((value:any) => {
+      if (value instanceof NavigationStart) {
+        this.isHomePage = value.url === '/home' || value.url === '/';
+      }
     });
   }
 
