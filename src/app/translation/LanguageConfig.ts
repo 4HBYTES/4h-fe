@@ -3,7 +3,7 @@ import {Injectable} from '@angular/core';
 export type LanguageCode = 'en' | 'fr' | 'ar';
 export type LanguageCodeWithCountryCode = string;
 export type LanguageDirection = 'RTL' | 'LTR';
-export type LanguageDirections = {[index:string]:LanguageDirection};
+export type LanguageDirections = { [index:string]:LanguageDirection };
 
 @Injectable()
 export class LanguageConfig {
@@ -12,9 +12,9 @@ export class LanguageConfig {
   private readonly default:LanguageCode = 'en';
   private readonly available:LanguageCode[] = ['fr', 'en', 'ar'];
   private readonly direction:LanguageDirections = {
-    fr: 'LTR',
-    en: 'LTR',
-    ar: 'RTL'
+    fr:'LTR',
+    en:'LTR',
+    ar:'RTL'
   };
 
   public getDefault():LanguageCode {

@@ -4,13 +4,13 @@ import {CommonModule} from '@angular/common';
 import {SubscribeComponent} from './subscribe.component';
 
 @NgModule({
-  imports: [
+  imports:[
     CommonModule
   ],
-  declarations: [
+  declarations:[
     SubscribeComponent
   ],
-  exports: [
+  exports:[
     SubscribeComponent
   ]
 })

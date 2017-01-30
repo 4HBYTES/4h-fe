@@ -26,7 +26,7 @@ import {Cookies} from './imports/Cookies';
 import {Auth} from './auth/Auth';
 
 @NgModule({
-  imports: [
+  imports:[
     BrowserModule,
     HttpModule,
     routing,
@@ -41,19 +41,19 @@ import {Auth} from './auth/Auth';
     SubscribeModule,
     LocalStorage
   ],
-  providers: [
+  providers:[
     Auth,
     TokenStorage,
     Cookies,
     UrlParse,
     UrlBuilder,
     Location,
-    {provide: NavigatorWrapper, useFactory: () => new NavigatorWrapper(navigator)}
+    {provide:NavigatorWrapper, useFactory:() => new NavigatorWrapper(navigator)}
   ],
-  declarations: [
+  declarations:[
     AppComponent
   ],
-  bootstrap: [
+  bootstrap:[
     AppComponent
   ]
 })

@@ -5,10 +5,10 @@ import {UrlBuilder} from './UrlBuilder';
 import {UrlParse} from '../imports/UrlParse';
 
 @NgModule({
-  imports: [
+  imports:[
     WindowWrapper
   ],
-  providers: [
+  providers:[
     UrlBuilder,
     UrlParse
   ]

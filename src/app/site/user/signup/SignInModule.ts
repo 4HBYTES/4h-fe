@@ -4,13 +4,13 @@ import {CommonModule} from '@angular/common';
 import {SignInComponent} from './signin.component';
 
 @NgModule({
-  imports: [
+  imports:[
     CommonModule
   ],
-  declarations: [
+  declarations:[
     SignInComponent
   ],
-  exports: [
+  exports:[
     SignInComponent
   ]
 })

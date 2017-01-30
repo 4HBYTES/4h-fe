@@ -2,8 +2,8 @@ import {NgModule, Inject} from '@angular/core';
 import {Url} from '../location/Url';
 
 @NgModule({
-  providers: [
-    {provide: 'Window', useValue: window}
+  providers:[
+    {provide:'Window', useValue:window}
   ],
 })
 export class WindowWrapper {

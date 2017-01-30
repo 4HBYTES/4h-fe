@@ -6,11 +6,11 @@ import {SignUpComponent} from './signup.component';
 
 export const routing:ModuleWithProviders = RouterModule.forChild([
   {
-    path: 'user/signin',
-    component: SignInComponent
+    path:'user/signin',
+    component:SignInComponent
   },
   {
-    path: 'user/signup',
-    component: SignUpComponent
+    path:'user/signup',
+    component:SignUpComponent
   }
 ]);

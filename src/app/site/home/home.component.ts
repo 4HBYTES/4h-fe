@@ -2,9 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
-  templateUrl: 'home.component.html',
-  animations: [],
-  providers: []
+  templateUrl:'home.component.html',
+  animations:[],
+  providers:[]
 })
 export class HomeComponent implements OnInit {
 

@@ -2,10 +2,10 @@ import {NgModule, Inject} from '@angular/core';
 import {storagePolyfillFactory} from './StoragePolyfill';
 
 @NgModule({
-  providers: [
+  providers:[
     {
-      provide: 'localStorage',
-      useFactory: () => storagePolyfillFactory(localStorage)
+      provide:'localStorage',
+      useFactory:() => storagePolyfillFactory(localStorage)
     }
   ]
 })

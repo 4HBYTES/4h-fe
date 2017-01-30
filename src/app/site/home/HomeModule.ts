@@ -9,7 +9,7 @@ import {SubscribeModule} from '../../components/subscribe/SubscribeModule';
 import {ContactModule} from '../../components/contact/ContactModule';
 
 @NgModule({
-  imports: [
+  imports:[
     routing,
     CommonModule,
     FooterModule,
@@ -17,7 +17,7 @@ import {ContactModule} from '../../components/contact/ContactModule';
     SubscribeModule,
     ContactModule
   ],
-  declarations: [
+  declarations:[
     HomeComponent
   ]
 })

@@ -24,7 +24,7 @@ export function storagePolyfillFactory(storage:Storage):Storage {
 export class StoragePolyfill {
 
   public storage:Storage;
-  private storageContainer:{[index:string]:string} = {};
+  private storageContainer:{ [index:string]:string } = {};
 
   constructor(private window:Window|any) {
 

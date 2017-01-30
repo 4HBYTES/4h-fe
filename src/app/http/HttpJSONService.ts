@@ -7,7 +7,7 @@ import {ErrorHandler} from './ErrorHandler';
 import {Url} from '../location/Url';
 
 @NgModule({
-  providers: [
+  providers:[
     DataExtractor,
     ErrorHandler
   ]
@@ -15,8 +15,8 @@ import {Url} from '../location/Url';
 export class HttpJSONService {
 
   private requestOptions:RequestOptions = new RequestOptions({
-    headers: new Headers({
-      'Content-Type': 'application/json'
+    headers:new Headers({
+      'Content-Type':'application/json'
     })
   });
 

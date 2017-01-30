@@ -4,13 +4,13 @@ import {CommonModule} from '@angular/common';
 import {HeaderComponent} from './header.component';
 
 @NgModule({
-  imports: [
+  imports:[
     CommonModule
   ],
-  declarations: [
+  declarations:[
     HeaderComponent
   ],
-  exports: [
+  exports:[
     HeaderComponent
   ]
 })

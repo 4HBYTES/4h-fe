@@ -4,13 +4,13 @@ import {CommonModule} from '@angular/common';
 import {ProductsComponent} from './products.component';
 
 @NgModule({
-  imports: [
+  imports:[
     CommonModule
   ],
-  declarations: [
+  declarations:[
     ProductsComponent
   ],
-  exports: [
+  exports:[
     ProductsComponent
   ]
 })

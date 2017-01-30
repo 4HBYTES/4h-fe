@@ -4,13 +4,13 @@ import {CommonModule} from '@angular/common';
 import {ContactComponent} from './contact.component';
 
 @NgModule({
-  imports: [
+  imports:[
     CommonModule
   ],
-  declarations: [
+  declarations:[
     ContactComponent
   ],
-  exports: [
+  exports:[
     ContactComponent
   ]
 })

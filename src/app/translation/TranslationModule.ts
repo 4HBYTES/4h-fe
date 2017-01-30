@@ -8,16 +8,16 @@ import {Language} from './Language';
 import {LanguageDomain} from './LanguageDomain';
 
 @NgModule({
-  imports: [
+  imports:[
     Translation.forRoot()
   ],
-  providers: [
+  providers:[
     LanguageConfig,
     LanguageDomain,
     Language,
     TranslateService
   ],
-  exports: [
+  exports:[
     Translation
   ]
 })

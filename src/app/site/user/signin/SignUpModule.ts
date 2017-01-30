@@ -5,14 +5,14 @@ import {SignUpComponent} from './signup.component';
 import {routing} from './routing';
 
 @NgModule({
-  imports: [
+  imports:[
     routing,
     CommonModule
   ],
-  declarations: [
+  declarations:[
     SignUpComponent
   ],
-  exports: [
+  exports:[
     SignUpComponent
   ]
 })
