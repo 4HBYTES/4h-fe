@@ -4,12 +4,10 @@ import {ModuleWithProviders} from '@angular/core';
 export const routes:Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', loadChildren: 'app/site/home/HomeModule'},
-  {path: 'express-signup', loadChildren: 'app/site/user/signup/SignupModule'},
-  {path: 'user/signup', loadChildren: 'app/site/user/signup/SignupModule'},
-  {path: 'user/login', loadChildren: 'app/site/user/login/LoginModule'},
-  {path: 'user/logout', loadChildren: 'app/site/user/login/LogoutModule'},
-  {path: 'user/password', loadChildren: 'app/site/user/password/PasswordModule'},
-  {path: 'user/verify', loadChildren: 'app/site/user/password/VerifyModule'}
+  {path: 'express-signup', loadChildren: 'app/site/user/signup/SignInModule'},
+  {path: 'user/signup', loadChildren: 'app/site/user/signup/SignUpModule'},
+  {path: 'user/signin', loadChildren: 'app/site/user/signin/SignInModule'},
+  {path: 'user/logout', loadChildren: 'app/site/user/login/LogoutModule'}
 ];
 
 export const routing:ModuleWithProviders = RouterModule.forRoot(routes);

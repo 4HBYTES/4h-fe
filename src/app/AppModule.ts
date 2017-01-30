@@ -15,6 +15,8 @@ import {HomeModule} from './site/home/HomeModule';
 import {WindowWrapper} from './browser/WindowWrapper';
 import {UrlBuilder} from './location/UrlBuilder';
 import {HeaderModule} from './components/header/HeaderModule';
+import {SignInModule} from './site/user/signup/SignInModule';
+import {SignUpModule} from './site/user/signin/SignUpModule';
 
 @NgModule({
   imports: [
@@ -24,7 +26,9 @@ import {HeaderModule} from './components/header/HeaderModule';
     TranslationModule,
     WindowWrapper,
     HomeModule,
-    HeaderModule
+    HeaderModule,
+    SignInModule,
+    SignUpModule
   ],
   providers: [
     UrlParse,
