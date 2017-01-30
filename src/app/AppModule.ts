@@ -17,6 +17,9 @@ import {UrlBuilder} from './location/UrlBuilder';
 import {HeaderModule} from './components/header/HeaderModule';
 import {SignInModule} from './site/user/signup/SignInModule';
 import {SignUpModule} from './site/user/signin/SignUpModule';
+import {ProductsModule} from './site/user/products/ProductsModule';
+import {PaymentModule} from './site/user/payment/PaymentModule';
+import {SubscribeModule} from './site/user/subscribe/SubscribeModule';
 
 @NgModule({
   imports: [
@@ -28,7 +31,10 @@ import {SignUpModule} from './site/user/signin/SignUpModule';
     HomeModule,
     HeaderModule,
     SignInModule,
-    SignUpModule
+    SignUpModule,
+    ProductsModule,
+    PaymentModule,
+    SubscribeModule
   ],
   providers: [
     UrlParse,

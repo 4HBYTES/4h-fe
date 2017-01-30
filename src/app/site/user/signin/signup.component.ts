@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector:'h4fe-signup-component',
@@ -7,9 +8,11 @@ import {Component} from '@angular/core';
 })
 export class SignUpComponent {
 
+  constructor(private router:Router) {
+  }
 
   public onSubmit():void {
-    console.log(this);
+    this.router.navigate(['user/subscribe']);
   }
 
 }
