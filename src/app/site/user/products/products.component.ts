@@ -8,6 +8,26 @@ import {Router} from '@angular/router';
 })
 export class ProductsComponent {
 
+  public productList:any[] = [
+    {
+      name: 'Ferox demolitiones ducunt ad amor.',
+      price: 134.99,
+      selected: false
+    },
+    {
+      name: 'Vae, bromium!',
+      price: 343.11,
+      selected: false
+    },
+    {
+      name: 'Seculas manducare!',
+      price: 441.22,
+      selected: false
+    }
+  ];
+
+  public totalPrice:number;
+
   constructor(private router:Router) {
   }
 
