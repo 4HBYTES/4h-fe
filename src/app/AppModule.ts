@@ -20,6 +20,9 @@ import {SignUpModule} from './site/user/signin/SignUpModule';
 import {ProductsModule} from './site/user/products/ProductsModule';
 import {PaymentModule} from './site/user/payment/PaymentModule';
 import {SubscribeModule} from './site/user/subscribe/SubscribeModule';
+import {TokenStorage} from './auth/TokenStorage';
+import {LocalStorage} from './browser/LocalStorage';
+import {Cookies} from './imports/Cookies';
 
 @NgModule({
   imports: [
@@ -34,9 +37,12 @@ import {SubscribeModule} from './site/user/subscribe/SubscribeModule';
     SignUpModule,
     ProductsModule,
     PaymentModule,
-    SubscribeModule
+    SubscribeModule,
+    LocalStorage
   ],
   providers: [
+    TokenStorage,
+    Cookies,
     UrlParse,
     UrlBuilder,
     Location,

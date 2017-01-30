@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {Router} from '@angular/router';
+import {TokenStorage} from '../../../auth/TokenStorage';
 
 @Component({
   selector:'h4fe-signup-component',
@@ -8,10 +9,12 @@ import {Router} from '@angular/router';
 })
 export class SignUpComponent {
 
-  constructor(private router:Router) {
+  constructor(private router:Router,
+              private tokenStorage:TokenStorage) {
   }
 
   public onSubmit():void {
+    this.tokenStorage.setAuthToken('settled');
     this.router.navigate(['user/subscribe']);
   }
 

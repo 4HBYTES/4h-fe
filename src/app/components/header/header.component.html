@@ -13,11 +13,14 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li>
+        <li *ngIf="!loggedIn">
           <a class="page-scroll" (click)="goToSignIn()">Sign In</a>
         </li>
-        <li>
+        <li *ngIf="!loggedIn">
           <a class="page-scroll" (click)="goToSignUp()">Sign Up</a>
+        </li>
+        <li *ngIf="loggedIn">
+          <a class="page-scroll" (click)="goToLogOut()">Log Out</a>
         </li>
       </ul>
     </div>
