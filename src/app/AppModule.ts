@@ -23,6 +23,7 @@ import {SubscribeModule} from './site/user/subscribe/SubscribeModule';
 import {TokenStorage} from './auth/TokenStorage';
 import {LocalStorage} from './browser/LocalStorage';
 import {Cookies} from './imports/Cookies';
+import {Auth} from './auth/Auth';
 
 @NgModule({
   imports: [
@@ -41,6 +42,7 @@ import {Cookies} from './imports/Cookies';
     LocalStorage
   ],
   providers: [
+    Auth,
     TokenStorage,
     Cookies,
     UrlParse,
