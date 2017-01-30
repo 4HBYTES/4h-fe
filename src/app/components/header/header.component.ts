@@ -15,6 +15,7 @@ export class HeaderComponent {
   constructor(private router:Router,
               private tokenStorage:TokenStorage,
               private cdRef:ChangeDetectorRef) {
+    this.loggedIn = !!this.tokenStorage.getAuthToken();
     this.tokenStorage.hasToken.subscribe((token:boolean) => {
       this.loggedIn = token;
       this.cdRef.detectChanges();
@@ -41,6 +42,7 @@ export class HeaderComponent {
 
   public goToLogOut():void {
     this.tokenStorage.removeAuthToken();
+    this.router.navigate(['home']);
   }
 
 }
