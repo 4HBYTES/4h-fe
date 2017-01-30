@@ -39,10 +39,7 @@ module.exports = webpackMerge(commonConfig, {
     }),
     new webpack.DefinePlugin({
       'process.env': {
-        'ENV': helpers.getEnvironmentVariable('ENV'),
-        'REDIRECT_API': helpers.getEnvironmentVariable('ICFLIX_REDIRECT_API'),
-        'AUTH_API': helpers.getEnvironmentVariable('ICFLIX_AUTH_API'),
-        'GRAPHQL_API': helpers.getEnvironmentVariable('ICFLIX_GRAPHQL_API')
+        'ENV': helpers.getEnvironmentVariable('ENV')
       }
     }),
     new CopyWebpackPlugin([
@@ -51,7 +48,7 @@ module.exports = webpackMerge(commonConfig, {
         to: 'i18n'
       },
       {
-        from: helpers.root('src','assets', 'icons'),
+        from: helpers.root('src','assets'),
         to: 'assets'
       }
     ])
