@@ -26,6 +26,7 @@ npm-debug.log
 # src
 src/**/*.js
 src/**/*.js.map
+!src/assets/js/**/*.js
 
 # test
 test/**/*.js
