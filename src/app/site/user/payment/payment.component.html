@@ -11,13 +11,16 @@
       <div class="panel panel-default">
 
         <ul class="list-group">
-          <div class="panel-heading">
-            Items:
-          </div>
+
           <li class="list-group-item list-group-item-with-padding" *ngFor="let item of items">
             <span>&nbsp;&nbsp;{{item.name}}</span>
-            <div class="pull-right"><span>Price: {{item.price}} {{item.currency}} &nbsp;&nbsp;</span></div>
+            <div class="pull-right"><span>Price: {{item.price}} {{item.currency}} &nbsp;&nbsp;x{{item.quantity}}</span></div>
           </li>
+
+          <div class="panel-footer">
+            Total price: <span class="pull-right">{{totalPrice}} {{items && items[0] ? items[0].currency : '' }}</span>
+          </div>
+
         </ul>
       </div>
     </div>
