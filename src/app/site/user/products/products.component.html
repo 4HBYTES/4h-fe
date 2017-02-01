@@ -30,11 +30,11 @@
                 <option>5</option>
               </select>
             </div>
-            <div class="pull-right"><span>Price: {{product.price}} $ &nbsp;&nbsp;</span></div>
+            <div class="pull-right"><span>Price: {{product.price}} {{product.currency}} &nbsp;&nbsp;</span></div>
           </li>
 
           <div class="panel-footer">
-            Total price: <span class="pull-right">{{totalPrice}} $</span>
+            Total price: <span class="pull-right">{{totalPrice}} {{productList && productList[0] ? productList[0].currency : '' }}</span>
           </div>
         </ul>
       </div>

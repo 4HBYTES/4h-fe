@@ -12,6 +12,8 @@ import {Basket} from '../../../payment/Basket';
 })
 export class PaymentComponent implements OnInit {
 
+  public items:any;
+
   constructor(private router:Router,
               private auth:Auth,
               private http:Http,
@@ -20,16 +22,18 @@ export class PaymentComponent implements OnInit {
 
   public onSubmit():void {
     this.router.navigate(['user/payment/confirm']);
-    this.http.post(ServerConfig.PAYMENT_URL, this.basket.getItems())
-      .subscribe(
-        response => this.basket.removeAll() // @TODO check if payment is success
-      );
+    this.http.post(ServerConfig.PAYMENT_URL, {
+      items: JSON.stringify(this.items)
+    }).subscribe(
+      response => this.basket.removeAll() // @TODO check if payment is success
+    );
   }
 
   public ngOnInit():void {
     if (!this.auth.isLoggedIn()) {
       this.router.navigate(['user/signin']);
     }
+    this.items = this.basket.getItems();
   }
 
 }

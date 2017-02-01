@@ -14,7 +14,8 @@ export class Basket {
   }
 
   public getItems():any {
-    JSON.parse(this.localStorage.getItem(this.STORAGE_KEY));
+    const items:string = this.localStorage.getItem(this.STORAGE_KEY);
+    return JSON.parse(items);
   }
 
   public removeAll():void {

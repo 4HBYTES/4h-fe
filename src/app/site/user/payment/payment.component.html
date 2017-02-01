@@ -6,6 +6,22 @@
         <hr class="colored">
       </div>
     </div>
+
+    <div class="row">
+      <div class="panel panel-default">
+
+        <ul class="list-group">
+          <div class="panel-heading">
+            Items:
+          </div>
+          <li class="list-group-item list-group-item-with-padding" *ngFor="let item of items">
+            <span>&nbsp;&nbsp;{{item.name}}</span>
+            <div class="pull-right"><span>Price: {{item.price}} {{item.currency}} &nbsp;&nbsp;</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <div class="row text-center">
       <img src="https://www.paypalobjects.com/webstatic/mktg/logo/AM_mc_vs_dc_ae.jpg" (click)="onSubmit()" style="cursor: pointer;"/>
     </div>
