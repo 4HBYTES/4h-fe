@@ -2,47 +2,54 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {Auth} from '../../../auth/Auth';
 import {Products, Product} from '../../../products/Products';
+import {Basket} from '../../../payment/Basket';
 
 @Component({
-  selector:'h4fe-products-component',
-  templateUrl:'products.component.html',
-  styles:[require('!css-loader!resolve-url-loader!postcss-loader!sass-loader?sourceMap!./products.component.scss')[0][1]],
-  providers:[
+  selector: 'h4fe-products-component',
+  templateUrl: 'products.component.html',
+  styles: [require('!css-loader!resolve-url-loader!postcss-loader!sass-loader?sourceMap!./products.component.scss')[0][1]],
+  providers: [
     Products
   ]
 })
 export class ProductsComponent implements OnInit {
 
-  public productList:any[] = [
-    {
-      name:'Ferox demolitiones ducunt ad amor.',
-      price:134.99,
-      selected:false
-    },
-    {
-      name:'Vae, bromium!',
-      price:343.11,
-      selected:false
-    },
-    {
-      name:'Seculas manducare!',
-      price:441.22,
-      selected:false
-    }
-  ];
+  public productList:Product[];
 
-  public totalPrice:number;
+  public totalPrice:number = 0;
 
   constructor(private router:Router,
               private auth:Auth,
-              private products:Products) {
+              private products:Products,
+              private basket:Basket) {
   }
 
   public onSubmit():void {
     this.router.navigate(['user/payment']);
+    this.basket.addItems(this.productList.filter((product:Product) => (<any>product).selected));
+  }
+
+  public onProductSwitch(event:any, product:Product):void {
+    const quantity:number = (<any>document.getElementById(`${event.target.id}quantity`)).value;
+    (<any>product).selected = event.target.checked;
+    (<any>product).quantity = quantity;
+
+    if (event.target.checked) {
+      this.totalPrice += product.price * quantity;
+    } else {
+      this.totalPrice -= product.price * quantity;
+    }
+  }
+
+  public setQuantity(event:any, product:Product):void {
+    const quantity:number = event.target.value;
+    const added:number = quantity - (<any>product).quantity;
+    (<any>product).quantity = quantity;
+    this.totalPrice += product.price * added;
   }
 
   public ngOnInit():void {
+    this.basket.removeAll();
     if (!this.auth.isLoggedIn()) {
       this.router.navigate(['user/signin']);
     } else {

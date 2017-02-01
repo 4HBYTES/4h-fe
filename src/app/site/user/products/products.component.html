@@ -15,14 +15,14 @@
           <li class="list-group-item list-group-item-with-padding" *ngFor="let product of productList let i = index">
 
             <div class="material-switch pull-left">
-              <input id="product{{i}}" name="someSwitchOption" type="checkbox" (click)="product.selected = !product.selected"/>
+              <input id="product{{i}}" name="someSwitchOption" type="checkbox" (click)="onProductSwitch($event, product)"/>
               <label for="product{{i}}" class="label-success"></label>
             </div>
 
-            <span>&nbsp;&nbsp; {{product.name}}</span>
+            <span>&nbsp;&nbsp;{{product.name}}</span>
 
             <div class="pull-right">
-              <select class="form-control" [disabled]="!product.selected">
+              <select class="form-control" [disabled]="!product.selected" (change)="setQuantity($event, product)" id="product{{i}}quantity">
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -34,7 +34,7 @@
           </li>
 
           <div class="panel-footer">
-            Total price: <span class="pull-right">1231.23 $</span>
+            Total price: <span class="pull-right">{{totalPrice}} $</span>
           </div>
         </ul>
       </div>

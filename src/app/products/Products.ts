@@ -25,7 +25,7 @@ export interface Product {
   id:ProductId;
   name:string;
   description:string;
-  price:string;
+  price:number;
   currency:string;
 }
 
