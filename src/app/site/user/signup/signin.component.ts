@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {Router} from '@angular/router';
 import {TokenStorage} from '../../../auth/TokenStorage';
+import {Auth} from '../../../auth/Auth';
 
 @Component({
   selector:'h4fe-signin-component',
@@ -10,7 +11,8 @@ import {TokenStorage} from '../../../auth/TokenStorage';
 export class SignInComponent {
 
   constructor(private router:Router,
-              private tokenStorage:TokenStorage) {
+              private tokenStorage:TokenStorage,
+              private auth:Auth) {
   }
 
   public onSubmit():void {

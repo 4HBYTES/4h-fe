@@ -24,6 +24,7 @@ import {TokenStorage} from './auth/TokenStorage';
 import {LocalStorage} from './browser/LocalStorage';
 import {Cookies} from './imports/Cookies';
 import {Auth} from './auth/Auth';
+import {Basket} from './payment/Basket';
 
 @NgModule({
   imports:[
@@ -43,6 +44,7 @@ import {Auth} from './auth/Auth';
   ],
   providers:[
     Auth,
+    Basket,
     TokenStorage,
     Cookies,
     UrlParse,
