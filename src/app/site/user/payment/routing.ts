@@ -3,7 +3,7 @@ import {ModuleWithProviders} from '@angular/core';
 
 import {PaymentComponent} from './payment.component';
 import {PaymentSuccessComponent} from './payment-success.component';
-import {PaymentConfirmComponent} from './payment-confirm.component';
+import {PaymentFailureComponent} from './payment-failure.component';
 
 export const routing:ModuleWithProviders = RouterModule.forChild([
   {
@@ -11,8 +11,8 @@ export const routing:ModuleWithProviders = RouterModule.forChild([
     component:PaymentComponent
   },
   {
-    path:'user/payment/confirm',
-    component:PaymentConfirmComponent
+    path:'user/payment/failure',
+    component:PaymentFailureComponent
   },
   {
     path:'user/payment/success',

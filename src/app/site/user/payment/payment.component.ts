@@ -33,7 +33,7 @@ export class PaymentComponent implements OnInit {
         response => {
           this.basket.removeAll();
           // @TODO check if payment is success and do stuff
-          this.windowWrapper.changeLocationHref('');
+          this.windowWrapper.changeLocationHref(''); // this should redirect to a paypal service and paypal should return to 'user/payment/failure' or 'user/payment/success'
         }
       );
   }

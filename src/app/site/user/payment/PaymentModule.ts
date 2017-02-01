@@ -4,7 +4,7 @@ import {CommonModule} from '@angular/common';
 import {PaymentComponent} from './payment.component';
 import {routing} from './routing';
 import {PaymentSuccessComponent} from './payment-success.component';
-import {PaymentConfirmComponent} from './payment-confirm.component';
+import {PaymentFailureComponent} from './payment-failure.component';
 
 @NgModule({
   imports:[
@@ -14,7 +14,7 @@ import {PaymentConfirmComponent} from './payment-confirm.component';
   declarations:[
     PaymentComponent,
     PaymentSuccessComponent,
-    PaymentConfirmComponent
+    PaymentFailureComponent
   ],
   exports:[
     PaymentComponent
