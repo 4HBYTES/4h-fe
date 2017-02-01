@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {Auth} from '../../../auth/Auth';
-import {Http} from '@angular/http';
+import {Http, Headers} from '@angular/http';
 import {ServerConfig} from '../../../../config';
 import {Basket} from '../../../payment/Basket';
 import {WindowWrapper} from '../../../browser/WindowWrapper';
@@ -25,14 +25,20 @@ export class PaymentComponent implements OnInit {
   }
 
   public onSubmit():void {
-    let data:any = {
-        user_id: 'boguslaw', #TODO: @boguslaw, we need the user_id here
+    // TODO: @boguslaw, we need the user_id here
+    const data:any = {
+        user_id: 'XXX',
         products: this.items.map((item) => {
             return {product: item.id, quantity: parseInt(item.quantity)};
         })
     };
 
-    this.http.post(`${ServerConfig.PAYMENT_URL}/payment/paypal/init`, JSON.stringify(data))
+    const headers:Headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+
+    const content:string = JSON.stringify(data)
+
+    this.http.post(`${ServerConfig.PAYMENT_URL}/payment/paypal/init`, content, {headers: headers})
       .subscribe(
         response => {
           this.basket.removeAll();
