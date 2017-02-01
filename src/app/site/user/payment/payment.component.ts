@@ -25,10 +25,14 @@ export class PaymentComponent implements OnInit {
   }
 
   public onSubmit():void {
-    let data:URLSearchParams = new URLSearchParams();
-    data.append('items', JSON.stringify(this.items));
+    let data:any = {
+        user_id: 'boguslaw', #TODO: @boguslaw, we need the user_id here
+        products: this.items.map((item) => {
+            return {product: item.id, quantity: parseInt(item.quantity)};
+        })
+    };
 
-    this.http.post(ServerConfig.PAYMENT_URL, data)
+    this.http.post(`${ServerConfig.PAYMENT_URL}/payment/paypal/init`, JSON.stringify(data))
       .subscribe(
         response => {
           this.basket.removeAll();
