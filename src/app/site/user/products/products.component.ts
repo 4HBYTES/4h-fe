@@ -52,10 +52,11 @@ export class ProductsComponent implements OnInit {
 
   public ngOnInit():void {
     this.basket.removeAll();
+    this.activatedRoute.params.subscribe(params => this.selected = params['id'] || '');
+
     if (!this.auth.isLoggedIn()) {
-      this.router.navigate(['user/signin']);
+      this.router.navigate(['user/signin', {id: this.selected}]);
     } else {
-      this.activatedRoute.params.subscribe(params => this.selected = params['id'] || '');
       this.products.getProducts()
         .subscribe((products:Product[]) => this.productList = products.map(product => {
           if (product.id === this.selected) {

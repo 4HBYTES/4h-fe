@@ -3,12 +3,13 @@ import {CommonModule} from '@angular/common';
 
 import {SignUpComponent} from './signup.component';
 import {routing} from './routing';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   imports:[
     routing,
     CommonModule,
+    FormsModule,
     ReactiveFormsModule,
   ],
   declarations:[

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {TokenStorage} from '../../../auth/TokenStorage';
 import {Auth} from '../../../auth/Auth';
 import {FormControl, FormGroup} from '@angular/forms';
@@ -13,15 +13,18 @@ export class SignInComponent implements OnInit {
 
   public form:FormGroup;
   public error:string;
+  public productId:string;
 
   constructor(private router:Router,
               private tokenStorage:TokenStorage,
-              private auth:Auth) {
+              private auth:Auth,
+              private activatedRoute:ActivatedRoute) {
   }
 
   public ngOnInit():void {
+    this.activatedRoute.params.subscribe(params => this.productId = params['id'] || '');
     if (this.auth.isLoggedIn()) {
-      this.router.navigate(['user/products']);
+      this.router.navigate(['user/products', {id: this.productId}]);
     }
     this.buildForm();
   }
@@ -33,7 +36,7 @@ export class SignInComponent implements OnInit {
           response => {
             if (response.status === 200) {
               this.tokenStorage.setAuthToken('settled');
-              this.router.navigate(['user/products']);
+              this.router.navigate(['user/products', {id: this.productId}]);
             } else {
               this.error = 'ERROR';
             }
