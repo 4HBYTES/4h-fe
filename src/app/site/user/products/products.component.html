@@ -15,7 +15,7 @@
           <li class="list-group-item list-group-item-with-padding" *ngFor="let product of productList let i = index">
 
             <div class="material-switch pull-left">
-              <input id="product{{i}}" name="someSwitchOption" type="checkbox" (click)="onProductSwitch($event, product)"/>
+              <input id="product{{i}}" name="someSwitchOption" type="checkbox" (change)="onProductSwitch($event, product)" [(ngModel)]="product.selected"/>
               <label for="product{{i}}" class="label-success"></label>
             </div>
 
