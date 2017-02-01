@@ -16,14 +16,14 @@ export class Auth {
   }
 
   public signUp(email:string, password:string):Observable<any> {
-    return this.http.post(`${ServerConfig.CMS_URL}/signup`, {
+    return this.http.post(`${ServerConfig.CMS_URL}/users/signup`, {
       email:email,
       password:password
     });
   }
 
   public signIn(email:string, password:string):Observable<any> {
-    return this.http.post(`${ServerConfig.CMS_URL}/signin`, {
+    return this.http.post(`${ServerConfig.CMS_URL}/users/signin`, {
       email:email,
       password:password
     });

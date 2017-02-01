@@ -1118,7 +1118,9 @@ aside.cta-quote span.quote {
   padding-bottom: 0.5em;
   border-bottom: 1px solid #e1e1e1;
 }
-
+.floating-label-form-group.has-error {
+  border-bottom: 1px solid red;
+}
 .floating-label-form-group input,
 .floating-label-form-group textarea {
   z-index: 1;

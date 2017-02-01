@@ -1,4 +1,4 @@
-<section id="signin">
+<section id="signin" [formGroup]="form">
   <div class="container wow fadeIn">
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -6,19 +6,32 @@
         <hr class="colored">
       </div>
     </div>
+    <div class="text-center">{{ error }}</div>
     <div class="row content-row">
       <div class="col-lg-8 col-lg-offset-2">
         <div class="row control-group">
           <div class="form-group col-xs-12 floating-label-form-group controls">
             <label>Email Address</label>
-            <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
+            <input
+              type="email"
+              formControlName="login"
+              class="form-control"
+              placeholder="Email Address"
+              id="email"
+              required data-validation-required-message="Please enter your email address.">
             <p class="help-block text-danger"></p>
           </div>
         </div>
         <div class="row control-group">
           <div class="form-group col-xs-12 floating-label-form-group controls">
             <label>Password</label>
-            <input type="tel" class="form-control" placeholder="Password" id="password" required data-validation-required-message="Please enter your password.">
+            <input
+              type="password"
+              formControlName="password"
+              class="form-control"
+              placeholder="Password"
+              id="password"
+              required data-validation-required-message="Please enter your password.">
             <p class="help-block text-danger"></p>
           </div>
         </div>
