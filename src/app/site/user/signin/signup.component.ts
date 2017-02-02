@@ -35,7 +35,7 @@ export class SignUpComponent implements OnInit {
         .subscribe(
           (response:any) => {
             if (response.status === 201) {
-              this.tokenStorage.setAuthToken('logged-in :)');
+              this.tokenStorage.setAuthToken(response.json().user_id);
               this.router.navigate(['user/subscribe']);
             }
             this.error = 'ERROR';

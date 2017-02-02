@@ -6,6 +6,7 @@ import {ServerConfig} from '../../../../config';
 import {Basket} from '../../../payment/Basket';
 import {WindowWrapper} from '../../../browser/WindowWrapper';
 import {URLSearchParams} from '@angular/http';
+import {TokenStorage} from '../../../auth/TokenStorage';
 
 @Component({
   selector: 'h4fe-payment-component',
@@ -21,22 +22,22 @@ export class PaymentComponent implements OnInit {
               private auth:Auth,
               private http:Http,
               private basket:Basket,
+              private tokenStorage:TokenStorage,
               private windowWrapper:WindowWrapper) {
   }
 
   public onSubmit():void {
-    // TODO: @boguslaw, we need the user_id here
     const data:any = {
-        user_id: 'XXX',
-        products: this.items.map((item) => {
-            return {product: item.id, quantity: parseInt(item.quantity)};
-        })
+      user_id: this.tokenStorage.getAuthToken(),
+      products: this.items.map((item) => {
+        return {product: item.id, quantity: parseInt(item.quantity, 10)};
+      })
     };
 
     const headers:Headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
-    const content:string = JSON.stringify(data)
+    const content:string = JSON.stringify(data);
 
     this.http.post(`${ServerConfig.PAYMENT_URL}/payment/paypal/init`, content, {headers: headers})
       .subscribe(

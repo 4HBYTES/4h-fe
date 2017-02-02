@@ -35,7 +35,7 @@ export class SignInComponent implements OnInit {
         .subscribe(
           response => {
             if (response.status === 200) {
-              this.tokenStorage.setAuthToken('settled');
+              this.tokenStorage.setAuthToken(response.json().user_id);
               this.router.navigate(['user/products', {id: this.productId}]);
             } else {
               this.error = 'ERROR';
